@@ -23,7 +23,7 @@ h1, h2, h3, h4 {
   padding: 60px 30px;
   gap: 40px;
   background: #e6f0ff; /* darker blue cover */
-  color: #e6f0ff;      /* light blue text */
+  color: #002d72;      /* light blue text */
   flex-wrap: wrap;
 }
 
@@ -179,6 +179,7 @@ section {
   color: #e6f0ff;
   margin-top: 40px;
 }
+
 
 
 
