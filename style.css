@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #0a1a2f;   /* Dark blue full background */
+  background: white;   /* Dark blue full background */
   color: #002d72;         /* Dark blue text */
   scroll-behavior: smooth;
 }
@@ -179,3 +179,4 @@ section {
   color: #e6f0ff;
   margin-top: 40px;
 }
+
