@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: white;   /* Dark blue full background */
+  background: #002d72;   /* Dark blue full background */
   color: #002d72;         /* Dark blue text */
   scroll-behavior: smooth;
 }
@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
   align-items: center;
   padding: 60px 30px;
   gap: 40px;
-  background: #0a254a; /* darker blue cover */
+  background: white; /* darker blue cover */
   color: #e6f0ff;      /* light blue text */
   flex-wrap: wrap;
 }
@@ -179,4 +179,5 @@ section {
   color: #e6f0ff;
   margin-top: 40px;
 }
+
 
