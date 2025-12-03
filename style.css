@@ -1,75 +1,100 @@
 /* ---------------------------------------------------------
+   ROOT VARIABLES (Light + Dark Mode)
+--------------------------------------------------------- */
+:root {
+  --bg-gradient: linear-gradient(to bottom right, #0a1a2f, #1b3b6f);
+  --card-bg: rgba(173, 216, 255, 0.25); /* light blue glass */
+  --text-color: #002b60;                /* dark navy */
+  --heading-color: #001a40;
+  --border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode {
+  --bg-gradient: linear-gradient(to bottom right, #02101f, #0a1c35);
+  --card-bg: rgba(40, 70, 120, 0.35);
+  --text-color: #e2ebff;
+  --heading-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------------------------------------------------------
    GLOBAL STYLING
 --------------------------------------------------------- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #ffffff; /* CLEAN WHITE BODY */
-  color: #0a1a2f;      /* DARK BLUE TEXT */
+  background: var(--bg-gradient);
+  color: var(--text-color);
   scroll-behavior: smooth;
+  transition: 0.4s ease-in-out;
 }
 
 h1, h2, h3, h4 {
-  margin: 0;
+  color: var(--heading-color);
 }
 
 /* ---------------------------------------------------------
-   COVER SECTION (KEPT AS ORIGINAL BLUE THEME)
+   LAYOUT HELPERS
+--------------------------------------------------------- */
+section {
+  padding: 60px 10%;
+}
+
+/* ---------------------------------------------------------
+   CARD DESIGN (Light Blue Area)
+--------------------------------------------------------- */
+.resume-block, 
+.project-block, 
+.contact-btn, 
+.toc-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.resume-block:hover,
+.project-block:hover,
+.toc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* ---------------------------------------------------------
+   COVER SECTION
 --------------------------------------------------------- */
 .cover-section {
   display: flex;
   align-items: center;
-  padding: 80px 50px;
   gap: 60px;
-  background: linear-gradient(135deg, #0d1b3d, #2a5298);
-  color: white;
-  flex-wrap: wrap;
-}
-
-.cover-left {
-  flex: 1;
+  padding-top: 80px;
 }
 
 .profile-pic {
-  width: 300px;
-  height: 300px;
-  border-radius: 20%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #d0e4ff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  border: 4px solid var(--heading-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
 }
 
-.cover-right {
-  flex: 2;
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
-.cover-right h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.cover-right h3 {
-  color: #bcd4ff;
-  margin: 5px 0;
-}
-
-.tagline {
-  margin-top: 10px;
-  font-style: italic;
-  color: #cfe2ff;
-}
-
-/* Social Icons */
-.social-icons {
-  margin-top: 15px;
-}
-
+/* ---------------------------------------------------------
+   SOCIAL ICONS
+--------------------------------------------------------- */
 .social-icons img {
   width: 40px;
-  height: 40px;
-  margin-right: 12px;
+  margin-right: 10px;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .social-icons img:hover {
@@ -77,209 +102,44 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   TABLE OF CONTENTS (Kept Blue & Light Blue)
+   TABLE OF CONTENTS GRID
 --------------------------------------------------------- */
-.contents-section {
-  padding: 50px 20px;
-  text-align: center;
-  background: #eef4ff;
-  color: #0a1a2f;
-}
-
-.contents-section h2 {
-  font-size: 2.4rem;
-  margin-bottom: 30px;
-  color: #002d72;
-}
-
 .toc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .toc-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 110px;
-  background: #f0f6ff;
-  border-radius: 15px;
-  color: #0a1a2f;
   text-decoration: none;
+  color: var(--heading-color);
+  font-size: 18px;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  text-align: center;
+  padding: 25px;
   transition: 0.3s;
 }
 
-.toc-card:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #c7dbff, #e6f0ff);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-}
-
-/* Active style */
-.toc-card.active {
-  background: #d0e4ff;
-  border: 2px solid #1e3c72;
-}
-
 /* ---------------------------------------------------------
-   INTRODUCTION SECTION (NOW WHITE)
+   CONTACT BUTTONS
 --------------------------------------------------------- */
-.intro-section {
-  padding: 60px 40px;
-  background: #ffffff; /* CLEAN WHITE CONTENT */
-  color: #0a1a2f;       /* DARK BLUE */
-  line-height: 1.8;
-  border-radius: 18px;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-.intro-section h2 {
-  text-align: center;
-  color: #002d72;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.intro-section strong {
-  color: #003eaa;
-}
-
-.intro-section em {
-  color: #0055cc;
-}
-
-/* ---------------------------------------------------------
-   RESUME SECTION (WHITE CONTENT)
---------------------------------------------------------- */
-.resume-section {
-  padding: 60px 40px;
-  background: #ffffff;
-  color: #0a1a2f;
-  border-radius: 18px;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-.resume-section h2 {
-  text-align: center;
-  color: #002d72;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.resume-block {
-  margin-bottom: 40px;
-}
-
-.resume-block h3 {
-  color: #003eaa;
-  border-bottom: 2px solid #1e3c72;
-  padding-bottom: 5px;
-  display: inline-block;
-  margin-bottom: 15px;
-  font-size: 1.6rem;
-}
-
-.education-item {
-  background: #f8faff;
-  padding: 15px 20px;
-  border-left: 5px solid #1e3c72;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* ---------------------------------------------------------
-   PROJECTS SECTION (WHITE CONTENT)
---------------------------------------------------------- */
-.projects-section {
-  padding: 60px 40px;
-  background: #ffffff;
-  color: #0a1a2f;
-  border-radius: 18px;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-.projects-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #002d72;
-  margin-bottom: 40px;
-}
-
-.project-block {
-  background: #f8faff;
-  padding: 20px 25px;
-  border-left: 6px solid #1e3c72;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.project-block h3 {
-  color: #003eaa;
-  margin-bottom: 10px;
-}
-
-/* ---------------------------------------------------------
-   CONTACT SECTION (WHITE CONTENT)
---------------------------------------------------------- */
-.contact-section {
-  padding: 60px 40px;
-  background: #ffffff;
-  color: #0a1a2f;
-  border-radius: 18px;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-.contact-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #002d72;
-}
-
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-}
-
 .contact-btn {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   text-decoration: none;
-  background: #dce7ff;
-  color: #0a1a2f;
+  color: var(--heading-color);
   padding: 15px 20px;
-  border-radius: 12px;
-  width: 330px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  margin-bottom: 15px;
 }
 
 .contact-btn:hover {
-  transform: scale(1.05);
-  background: #c8dbff;
+  transform: translateX(8px);
 }
 
 .contact-icon {
-  width: 35px;
-  height: 35px;
+  width: 32px;
   border-radius: 8px;
 }
 
@@ -287,9 +147,32 @@ h1, h2, h3, h4 {
    FOOTER
 --------------------------------------------------------- */
 .footer {
-  text-align: center;
-  padding: 20px;
-  background: #0d1b3d;
-  color: #cfe2ff;
   margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+}
+
+/* ---------------------------------------------------------
+   DARK MODE TOGGLE BUTTON
+--------------------------------------------------------- */
+.theme-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--heading-color);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
 }
