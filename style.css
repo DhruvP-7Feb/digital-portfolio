@@ -4,8 +4,8 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom right, #0a1a2f, #1b3b6f);
-  color: #f4f4f4;
+  background: #ffffff; /* CLEAN WHITE BODY */
+  color: #0a1a2f;      /* DARK BLUE TEXT */
   scroll-behavior: smooth;
 }
 
@@ -14,7 +14,7 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   COVER SECTION
+   COVER SECTION (KEPT AS ORIGINAL BLUE THEME)
 --------------------------------------------------------- */
 .cover-section {
   display: flex;
@@ -77,7 +77,7 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   TABLE OF CONTENTS
+   TABLE OF CONTENTS (Kept Blue & Light Blue)
 --------------------------------------------------------- */
 .contents-section {
   padding: 50px 20px;
@@ -120,14 +120,24 @@ h1, h2, h3, h4 {
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
 }
 
+/* Active style */
+.toc-card.active {
+  background: #d0e4ff;
+  border: 2px solid #1e3c72;
+}
+
 /* ---------------------------------------------------------
-   INTRODUCTION SECTION
+   INTRODUCTION SECTION (NOW WHITE)
 --------------------------------------------------------- */
 .intro-section {
   padding: 60px 40px;
-  background: linear-gradient(120deg, #f0f6ff, #c7dbff);
-  color: #0a1a2f;
+  background: #ffffff; /* CLEAN WHITE CONTENT */
+  color: #0a1a2f;       /* DARK BLUE */
   line-height: 1.8;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
 }
 
 .intro-section h2 {
@@ -146,12 +156,16 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   RESUME SECTION
+   RESUME SECTION (WHITE CONTENT)
 --------------------------------------------------------- */
 .resume-section {
   padding: 60px 40px;
-  background: linear-gradient(135deg, #e6f0ff, #c3d7ff);
+  background: #ffffff;
   color: #0a1a2f;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
 }
 
 .resume-section h2 {
@@ -174,7 +188,6 @@ h1, h2, h3, h4 {
   font-size: 1.6rem;
 }
 
-/* Education Blocks */
 .education-item {
   background: #f8faff;
   padding: 15px 20px;
@@ -185,12 +198,16 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   PROJECTS SECTION
+   PROJECTS SECTION (WHITE CONTENT)
 --------------------------------------------------------- */
 .projects-section {
   padding: 60px 40px;
-  background: linear-gradient(120deg, #e8f0ff, #d7e4ff);
+  background: #ffffff;
   color: #0a1a2f;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
 }
 
 .projects-section h2 {
@@ -215,12 +232,16 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------
-   CONTACT SECTION
+   CONTACT SECTION (WHITE CONTENT)
 --------------------------------------------------------- */
 .contact-section {
   padding: 60px 40px;
-  background: #eef5ff;
+  background: #ffffff;
   color: #0a1a2f;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
 }
 
 .contact-section h2 {
